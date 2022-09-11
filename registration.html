@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-<title>A5 - Registration Page</title>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
-<meta charset="utf-8"/>
-<script src="Registration.js"></script>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <script type="text/javascript" src="js/registration.js"></script>
+    <script type="text/javascript" src="js/validation-registration.js"></script>
+
 </head>
-<body onload='document.regform.userID.focus()'>
-<header>
-<div class="top">
-<a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-</div>
-<nav>
-<ul class="topnav">
-<li><a href="index.html">Home</a></li>
-<li><a href="invitation.html">Invitation</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="registration.html" class="active">Registration</a></li>
-</ul>
-</nav>
-</header>
-<section id="pageForm">
-<form name="regform" onsubmit="return validate()">
-<label for="userID"><span style="color: red">* </span>User ID:</label>
-<input type="text" id="userID" name="userID" placeholder="Create User Name (Must only contain letters and numbers)" required/>
-<span id="erroruserID"></span><br>
-<label for="password"><span style="color: red">* </span>Password:</label>
-<input type="password" id="password" name="password" placeholder="Create Password (Must contain a minimum of 8 characters)" required/>
-<span id="errorpassword"></span><br>
-<label for="psswrdValidation"><span style="color: red">* </span> Verify Password:</label>
-<input type="password" id="psswrdValidation" name="psswrdValidation" placeholder="Enter Password again (Must match password entered above)" required/>
-<span id="errorpsswrdValidation"></span><br>
-<label for="firstName"><span style="color: red">* </span>First Name:</label>
-<input type="text" id="firstName" name="firstName" placeholder="Enter First Name" required/>
-<span id="errorfirstName"></span><br>
-<label for="lastName"><span style="color: red">* </span>Last Name:</label>
-<input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" required/>
-<span id="errorlastName"></span><br>
-<label for="email"><span style="color: red">* </span>Email Address:</label>
-<input type="text" id="email" name="email" placeholder="Enter Email Address (Example: JohnDoe@gmail.com)" required/>
-<span id="erroremail"></span><br>
-<label for="phoneNumber"><span style="color: red">* </span>Phone Number:</label>
-<input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number (Example:(000) 000-0000)" required/>
-<span id="errorphoneNumber"></span><br>
-<label><span style="color: red">* </span>Newsletter Subscription:</label>
-<input type="radio" id="signUpYes" name="signUpNewsletter" value="Yes">
-Yes
-<input type="radio" id="signUpNo" name="signUpNewsletter" value="No">
-No
-<span id="errorsignUpNewsletter"></span><br>
-<input type="submit" value="Next step" />
-<label style="font-size:14px; color:red; font-style:italic;">* Required Field.</label>
-</form>
-</section>
-<footer>This events site is for IT-FP3215 tasks.</footer>
+
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <ul class="topnav">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="invitation.html">Invitation</a>
+                </li>
+				<li><a href="volunteer.html">Volunteers</a>
+                </li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li><a href="registration.html" class="active">Registration</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <section id="pageForm">
+        <form id="validateForm" name="validateForm" onsubmit="return validateFields(validateForm)">
+            <label for="userName">Username:</label>
+            <input onchange="validateUserName(this.value)" type="text" name="userName" placeholder="Enter your Username" />
+            <div id="userNameError" class="errorMsg"></div>
+
+            <label for="Password">Password:
+            </label>
+            <input onchange="validatePassword(this.value)" type="password" name="password" placeholder="Enter your Password" />
+            <div id="passwordError" class="errorMsg"></div>
+
+            <label for="passwordVerify">Verify your Password:
+            </label>
+            <input onchange="validateVerify(this.value, form.password.value)" type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+            <div id="passwordVerifyError" class="errorMsg"></div>
+
+            <label for="firstName">First Name:
+            </label>
+            <input onchange="validateFirstName(this.value)" type="text" name="firstName" placeholder="Enter your First Name" />
+            <div id="firstNameError" class="errorMsg"></div>
+
+            <label for="lastName">Last Name:
+            </label>
+            <input onchange="validateLastName(this.value)" type="text" name="lastName" placeholder="Enter your Last Name" />
+            <div id="lastNameError" class="errorMsg"></div>
+
+            <label for="email">Email:
+            </label>
+
+            <input onchange="validateEmail(this.value)" type="text" name="email" placeholder="Enter your Email Address" />
+            <div id="emailError" class="errorMsg"></div>
+
+
+			<label for="phoneNumber">Phone Number
+            </label>
+            <input onchange="validatePhone(this.value)" type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
+            <div id="phoneNumberError" class="errorMsg"></div>
+
+			<label for="signUpNewsletter">Sign up for newsletter:
+            </label>
+
+            <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+            <input type="radio" name="signUpNewsletter" value="No"> No
+
+            <input type="submit" value="Next step">
+        </form>
+    </section>
+
+    <footer>This events site is for IT3515 tasks.
+    </footer>
 </body>
+
 </html>

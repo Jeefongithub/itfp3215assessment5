@@ -1,86 +1,50 @@
-<!DOCTYPE
-html>
+<!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-<title>A5 - Interests Page</title>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
-<!-- Add HTML Charset -->
-<meta charset="utf-8"/>
-<!-- Add script source for the rest of the document to use. -->
-<script src="interests.js"></script>
+    <title>Interests Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/interests.js"></script>
+    <script type="text/javascript" src="js/validation-interests.js"></script>
 </head>
-<body onload='document.regform.userID.focus()'>
-<header>
-<div class="top">
-<a class="logo" href="index.html">CapellaVolunteers<span
-class="dotcom">.org</span></a>
-</div>
-<nav>
-<ul class="topnav">
-<li><a href="index.html">Home</a></li>
-<li><a href="invitation.html">Invitation</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="registration.html">Registration</a></li>
-<li><a href="interests.html" class="active">Interests</a></li>
-</ul>
-</nav>
-</header>
-<section id="pageForm">
-<!-- File will load after successful validation -->
-<!-- When user clicks on submit button, onsubmit is triggered if it is not
-coomplete it will return false then action will not be triggered. -->
-<form name="regform" onsubmit="return getData()">
-<!-- UserID input from registration.html -->
-<input type="hidden" id="userID" name="userID" />
-<!-- Password input from registration.html -->
-<input type="hidden" id="password" name="password" />
-<!-- psswrdValidation input from registration.html -->
-<input type="hidden" id="psswrdValidation" name="psswrdValidation" />
-<!-- firstName input from registration.html -->
-<input type="hidden" id="firstName" name="firstName" />
-<!-- lastName input from registration.html -->
-<input type="hidden" id="lastName" name="lastName" />
-<!-- email input from registration.html -->
-<input type="hidden" id="email" name="email" />
-<!-- phoneNumber input from registration.html -->
-<input type="hidden" id="phoneNumber" name="phoneNumber" />
-<!-- Optional fields to collect data from this page -->
-<!-- Interests (list of three choices using a checkbox). -->
-<label><b>Please select interests:</b> </label><br>
-<input type="radio" id="hiking" name="interests" value="hiking"> Hiking <br>
-<!-- User can choose the hiking radio button on the interests.html page -->
-<input type="radio" id="swimming" name="interests" value="swimming">
-Swimming <br> <!-- User can choose the swimming radio button on the
-interests.html page -->
-<input type="radio" id="kayaking" name="interests" value="kayaking">
-Kayaking <br> <!-- User can choose the kayaking radio button on the
-interests.html page -->
-<br></br>
-<!-- Comments (free form text area). -->
-<label for="comments"><b>Comments: (Optional)</b></label>
-<input type="text" id="comments" name="comments" placeholder="Please
-share additional interests not listed." /><br> <!-- Prompts user for comment
-input on the interests.html page -->
-<br></br>
-<!-- Sports Newsletter radio buttons -->
-<label><b>Sign up for a newsletter: (Please select one)</b></label>
-<br></br>
-<input type="radio" id="signUpYes" name="Newsletter" value="Yes"> Yes <!--
-User can choose the Yes radio button on the interests.html page -->
-<input type="radio" id="signUpNo" name="Newsletter" value="No"> No
-<br><br> <!-- User can choose the No radio button on the interests.html page
--->
-<br></br>
-<!-- Referred by (text field). -->
-<!-- Comments (free form text area). -->
-<label for="referred"><b>Referred by: (Optional)</b></label>
-<input type="text" id="referred" name="referred" placeholder="Who referred
-you?" /><br> <!-- Prompts user for referral input on the interests.html page -->
-<!-- Submit button -->
-<input type="submit" value="Next step" />
-</form>
-</section>
-<!-- div id="regCon"></div> -->
-<footer>This events site is for IT-FP3215 tasks.</footer>
+
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <ul class="topnav">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="invitation.html">Invitation</a>
+                </li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li><a href="registration.html" class="active">Registration</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <section id="pageForm">
+        <form id="validateForm" name="validateForm" onsubmit="return validateFields(validateForm)">
+            <label for="Interests">Select an Interest:</label>
+            <input type="radio" name="Interests" value="Software"> Software
+            <input type="radio" name="Interests" value="Hardware"> Hardware
+            <input type="radio" name="Interests" value="Non-techie"> Non-techie	
+        <br/><br/>
+            <label for="Comments">Comments:</label>
+            <input type="text" name="Comments" placeholder="Any Comments?" />
+            <label for="ReferredBy">Referred By:</label>
+            <input type="text" name="ReferredBy" placeholder="Referred By" />	
+	
+            <input type="submit" value="Register">
+        </form>
+    </section>
+
+    <footer>This events site is for IT-FP3215 tasks.
+    </footer>
 </body>
+
 </html>
