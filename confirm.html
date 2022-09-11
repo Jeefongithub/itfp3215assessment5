@@ -1,51 +1,22 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-    <title>Interests Page</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script type="text/javascript" src="js/registration.js"></script>
-
-</head>
-
-<body>
-    <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-			    <li><a href="volunteer.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li><a href="registration.html" class="active">Registration</a>
-                </li>
-            </ul>
-
-        </nav>
-    </header>
-    <section id="pageFormContent">
-        <h1>Confirmed! Your details are below: </h1>
-        <div id="confirmRoot">
-
-        </div>
-
-    </section>
-
-    <footer>This events site is for IT3515 tasks.
-    </footer>
-
-    <script>
-        window.onload = function () {
-            displayFormData('confirmRoot');
-        }
-
-    </script>
-</body>
-
-</html>
+<!DOCTYPE html> <html lang="en-US"> <head> <title>A5 - Confirmation Page</title> <link
+    rel="stylesheet" type="text/css" href="main.css" /> <!-- Add HTML Charset --> <meta charset="utf-8"/>
+    <!-- Add script source for the rest of the document to use. --> <script src="confirm.js"></script> </head>
+    <body> <header> <div class="top"> <a class="logo" href="index.html">CapellaVolunteers<spanclass="dotcom">.org</span></a> </div> <nav> <ul class="topnav"> <li><a
+        href="index.html">Home</a></li> <li><a href="invitation.html">Invitation</a></li> <li><a
+        href="gallery.html">Gallery</a></li> <li><a href="registration.html">Registration</a></li> <li><a
+        href="confirm.html" class="active">Confirmation</a></li> </ul> </nav> </header> <section
+        id="pageForm"> <form> <!-- UserID input from registration.html --> <input type="hidden" id="userID"
+        name="userID" /> <!-- Password input from registration.html --> <input type="hidden" id="password"
+        name="password" /> <!-- psswrdValidation input from registration.html --> <input type="hidden"
+        id="psswrdValidation" name="psswrdValidation" /> <!-- firstName input from registration.html --> <input
+        type="hidden" id="firstName" name="firstName" /> <!-- lastName input from registration.html -->
+        <input type="hidden" id="lastName" name="lastName" /> <!-- email input from registration.html -->
+        <input type="hidden" id="email" name="email" /> <!-- phoneNumber input from registration.html -->
+        <input type="hidden" id="phoneNumber" name="phoneNumber" /> <!-- phoneNumber input from
+        registration.html --> <input type="hidden" id="signUpNewsletter" name="signUpNewsletter" /> <!--
+        interests input from interests.html --> <input type="hidden" id="interests" name="interests" /> <!--
+        comments input from interests.html --> <input type="hidden" id="comments" name="comments" /> <!--
+        Newsletter input from interests.html --> <input type="hidden" id="Newsletter" name="Newsletter" />
+        <!-- referred input from interests.html --> <input type="hidden" id="referred" name="referred" /> <div
+        id="regCon"></div> </form> </section> <footer>This events site is for IT-FP3215 tasks.</footer> </body>
+        </html>
